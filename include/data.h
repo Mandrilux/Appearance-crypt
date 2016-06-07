@@ -25,11 +25,21 @@ char		 *my_strdup(char *src);
 
 char		 *my_strdup(char *src);
 
+
+
+
+char		 *my_strdup(char *src);
+
+
+
+
+char		 *my_strdup(char *src);
+
 		/* crypto.c */
 
 int		 resolv(t_data *data);
-int		 count_char_diff(char *str);
-int		 count_char_here(char *str, char c);
+int		 count_char_diff(t_data *data);
+int		 count_char_here(t_data *data, char c);
 int		 end_check(char *str);
 
 		/* get_line.c */
