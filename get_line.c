@@ -5,7 +5,7 @@
 ** Login   <baptiste@epitech.net>
 **
 ** Started on  Mon May 16 11:29:12 2016
-** Last update Tue Jun  7 18:01:41 2016 
+** Last update Tue Jun  7 18:07:30 2016 
 */
 
 #include "data.h"
@@ -32,6 +32,21 @@
 /*     } */
 /*   return (0); */
 /* } */
+
+char    *my_strdup(char *src)
+{
+  char  *str;
+  int   lenght;
+
+  if (src == NULL)
+    return (NULL);
+  lenght = strlen(src) + 1;
+  str = malloc(sizeof(char) * lenght);
+  if (str == NULL)
+    return (NULL);
+  strcpy(str, src);
+  return (str);
+}
 
 char		*m_realoc(char *s, int fillback, char *buff, int *start)
 {

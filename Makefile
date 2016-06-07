@@ -5,14 +5,16 @@
 ## Login   <baptiste@epitech.net>
 ## 
 ## Started on  Wed May 11 17:39:05 2016 
-## Last update Tue Jun  7 17:56:05 2016 
+## Last update Tue Jun  7 18:16:50 2016 
 ##
 
 
 NAME	=	occ
 
 SRC	=	main.c \
-		get_line.c
+		get_line.c \
+		crypto.c
+
 
 INC_DIR	=	include
 
@@ -20,7 +22,7 @@ OBJ	=	$(SRC:.c=.o)
 
 CC	=	/usr/bin/gcc
 
-CFLAGS	=	-W -Wall -Wextra -ansi -pedantic
+CFLAGS	=	-W -Wall -Wextra -ansi -pedantic -g
 CFLAGS  +=      -I$(INC_DIR)
 
 RM	=	rm -f
