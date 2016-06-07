@@ -2,7 +2,11 @@
 #ifndef DATA_H_
 #define DATA_H_
 
-#define	LEN 4096
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include <unistd.h>
+#include "get_next_line.h"
 
 		/* main.c */
 

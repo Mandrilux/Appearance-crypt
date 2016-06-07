@@ -5,13 +5,14 @@
 ## Login   <baptiste@epitech.net>
 ## 
 ## Started on  Wed May 11 17:39:05 2016 
-## Last update Mon Jun  6 13:37:13 2016 
+## Last update Tue Jun  7 17:56:05 2016 
 ##
 
 
 NAME	=	occ
 
-SRC	=	main.c
+SRC	=	main.c \
+		get_line.c
 
 INC_DIR	=	include
 
