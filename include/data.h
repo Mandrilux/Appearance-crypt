@@ -35,6 +35,22 @@ char		 *my_strdup(char *src);
 
 char		 *my_strdup(char *src);
 
+
+
+
+char		 *my_strdup(char *src);
+
+
+
+
+
+
+char		 *my_strdup(char *src);
+
+		/* strmcat.c */
+
+char		 *my_strmcat(char *str_1, char *str_2);
+
 		/* crypto.c */
 
 int		 resolv(t_data *data);
@@ -49,5 +65,7 @@ char		 *my_strdup(char *src);
 		/* main.c */
 
 int		 main(void);
+int		 create_occ_nb(t_data *data);
+int		 count_char(char *str, char c);
 
 #endif /* DATA_H_ */
