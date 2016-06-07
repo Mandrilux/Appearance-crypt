@@ -5,33 +5,33 @@
 ** Login   <baptiste@epitech.net>
 **
 ** Started on  Mon May 16 11:29:12 2016
-** Last update Tue Jun  7 17:56:18 2016 
+** Last update Tue Jun  7 18:01:41 2016 
 */
 
 #include "data.h"
 
-int		my_memset_len(char *s, char c, int size, int flag)
-{
-  int		i;
+/* int		my_memset_len(char *s, char c, int size, int flag) */
+/* { */
+/*   int		i; */
 
-  if (flag == 1)
-    {
-      i  = 0;
-      while (i < size)
-	s[i++] = c;
-      return (0);
-    }
-  else if (flag == 0)
-    {
-      (void) c;
-      (void) size;
-      i = 0;
-      while (s != NULL && s[i] != '\0')
-	i++;
-      return (i);
-    }
-  return (0);
-}
+/*   if (flag == 1) */
+/*     { */
+/*       i  = 0; */
+/*       while (i < size) */
+/* 	s[i++] = c; */
+/*       return (0); */
+/*     } */
+/*   else if (flag == 0) */
+/*     { */
+/*       (void) c; */
+/*       (void) size; */
+/*       i = 0; */
+/*       while (s != NULL && s[i] != '\0') */
+/* 	i++; */
+/*       return (i); */
+/*     } */
+/*   return (0); */
+/* } */
 
 char		*m_realoc(char *s, int fillback, char *buff, int *start)
 {
@@ -39,11 +39,13 @@ char		*m_realoc(char *s, int fillback, char *buff, int *start)
   int		old_len;
 
   old_len = 0;
-  s != 0 ? (old_len = my_memset_len(s, '\n', 1, 0)) : (old_len = 0);
+  /* s != 0 ? (old_len = my_memset_len(s, '\n', 1, 0)) : (old_len = 0); */
+  s != 0 ? (old_len = strlen(s)) : (old_len = 0);
   line = malloc((old_len + fillback + 1) * sizeof(char));
   if (line == NULL)
     return (NULL);
-  my_memset_len(line, '\0', old_len + fillback + 1, 1);
+  /* my_memset_len(line, '\0', old_len + fillback + 1, 1); */
+  memset(line, '\0', old_len + fillback + 1);
   s != 0 ? strncpy(line, s, old_len) : strncpy(line, "", old_len);
   line[old_len + fillback] = '\0';
   strncpy(line + old_len, buff + start[0], fillback);
@@ -51,11 +53,11 @@ char		*m_realoc(char *s, int fillback, char *buff, int *start)
    return (line);
 }
 
-void		init(int *nb2, int *nb)
-{
-  *nb = 0;
-  *nb2 = 0;
-}
+/* void		init(int *nb2, int *nb) */
+/* { */
+/*   *nb = 0; */
+/*   *nb2 = 0; */
+/* } */
 
 char		*get_next_line(const int fd)
 {
@@ -73,7 +75,9 @@ char		*get_next_line(const int fd)
     {
       if (n <= start)
 	{
-	  init(&start, &back);
+	  start = 0;
+	  back = 0;
+	  /* init(&start, &back); */
 	  if (!(n = read(fd, buff, READ_SIZE)))
 	    return (s);
        	  if (n == -1)
