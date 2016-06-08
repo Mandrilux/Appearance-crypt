@@ -5,7 +5,7 @@
 ** Login   <baptiste@epitech.net>
 **
 ** Started on  Mon May 16 10:48:51 2016
-** Last update Wed Jun  8 21:45:34 2016 
+** Last update Wed Jun  8 21:49:51 2016 
 */
 
 #include "data.h"
@@ -31,7 +31,8 @@ int		main(void)
     }
   if ((nb_space = count_char(data.str_ori, ' ')) > 0)
     {
-      if ((tmp = realloc(data.occ_num, strlen(data.occ_str) + 1)) == NULL)
+      if ((tmp = malloc(sizeof(int) * (strlen(data.occ_str) + 1))) == NULL)
+      /* if ((tmp = realloc(data.occ_num, strlen(data.occ_str) + 1)) == NULL) */
 	{
 	  printf("[-] Error memory\n");
 	  return (EXIT_FAILURE);
