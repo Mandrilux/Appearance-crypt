@@ -5,7 +5,7 @@
 ## Login   <baptiste@epitech.net>
 ## 
 ## Started on  Wed May 11 17:39:05 2016 
-## Last update Wed Jun  8 21:30:00 2016 
+## Last update Wed Jun  8 21:36:55 2016 
 ##
 
 
@@ -14,7 +14,8 @@ NAME	=	occ
 SRC	=	main.c \
 		get_line.c \
 		crypto.c \
-		strmcat.c
+		strmcat.c \
+		count.c 
 
 INC_DIR	=	include
 

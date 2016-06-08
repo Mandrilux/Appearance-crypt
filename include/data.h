@@ -47,6 +47,35 @@ char		 *my_strdup(char *src);
 
 char		 *my_strdup(char *src);
 
+
+
+
+
+
+char		 *my_strdup(char *src);
+
+
+
+
+
+
+
+
+char		 *my_strdup(char *src);
+
+
+
+
+
+
+
+
+char		 *my_strdup(char *src);
+
+		/* count.c */
+
+int		 count_char(char *str, char c);
+
 		/* strmcat.c */
 
 char		 *my_strmcat(char *str_1, char *str_2);
@@ -65,7 +94,7 @@ char		 *my_strdup(char *src);
 		/* main.c */
 
 int		 main(void);
+int		 display(t_data *data);
 int		 create_occ_nb(t_data *data);
-int		 count_char(char *str, char c);
 
 #endif /* DATA_H_ */

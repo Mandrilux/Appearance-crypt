@@ -1,11 +1,11 @@
 /*
-** main.c for in /home/baptiste/project/generator_h
+1;2802;0c** main.c for in /home/baptiste/project/generator_h
 **
 ** Made by
 ** Login   <baptiste@epitech.net>
 **
 ** Started on  Mon May 16 10:48:51 2016
-** Last update Tue Jun  7 19:15:32 2016 
+** Last update Wed Jun  8 21:45:34 2016 
 */
 
 #include "data.h"
@@ -13,6 +13,9 @@
 int		main(void)
 {
   t_data	data;
+  int		nb_space;
+  int		*tmp;
+  int		i = -1;
 
   printf("Entrez une chaine\n");
   if ((data.str_ori  = get_next_line(0)) == NULL)
@@ -26,9 +29,34 @@ int		main(void)
       printf("[-] Error when count char\n");
       return (EXIT_FAILURE);
     }
+  if ((nb_space = count_char(data.str_ori, ' ')) > 0)
+    {
+      if ((tmp = realloc(data.occ_num, strlen(data.occ_str) + 1)) == NULL)
+	{
+	  printf("[-] Error memory\n");
+	  return (EXIT_FAILURE);
+	}
+      while (++i < (int)strlen(data.occ_str))
+	tmp[i] = data.occ_num[i];
+      tmp[i] = nb_space;
+      free(data.occ_num);
+      data.occ_num = tmp;
+      data.occ_str = my_strmcat(data.occ_str, my_strdup(" "));
+    }
+  display(&data);
   return (EXIT_SUCCESS);
 }
 
+int	display(t_data *data)
+{
+  int	i = -1;
+
+  while (data->occ_str[++i] != '\0')
+  {
+    printf("char = [%c] et nb = %d\n", data->occ_str[i], data->occ_num[i]);
+  }
+  return (1);
+}
 int	create_occ_nb(t_data *data)
 {
   int	len;
@@ -42,19 +70,6 @@ int	create_occ_nb(t_data *data)
   while (data->occ_str[++i] != '\0')
     {
       data->occ_num[i] = count_char(data->str_ori, data->occ_str[i]);
-      printf("char = [%c] et nb = %d\n", data->occ_str[i], data->occ_num[i]);
     }
   return (1);
-}
-
-int	count_char(char *str, char c)
-{
-  int	nb = 0, i = -1;
-
-  while (str[++i] != '\0')
-    {
-      if (str[i] == c)
-	nb++;
-    }
-  return (nb);
 }
