@@ -5,7 +5,7 @@
 ## Login   <baptiste@epitech.net>
 ## 
 ## Started on  Wed May 11 17:39:05 2016 
-## Last update Wed Jun  8 21:47:08 2016 
+## Last update Wed Jun  8 21:52:30 2016 
 ##
 
 
@@ -15,7 +15,8 @@ SRC	=	main.c \
 		get_line.c \
 		crypto.c \
 		strmcat.c \
-		count.c 
+		count.c \
+		display.c
 
 INC_DIR	=	include
 

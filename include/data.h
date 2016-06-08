@@ -72,6 +72,26 @@ char		 *my_strdup(char *src);
 
 char		 *my_strdup(char *src);
 
+
+
+
+
+
+
+
+char		 *my_strdup(char *src);
+
+
+
+
+
+
+
+
+
+
+char		 *my_strdup(char *src);
+
 		/* count.c */
 
 int		 count_char(char *str, char c);
@@ -87,6 +107,10 @@ int		 count_char_diff(t_data *data);
 int		 count_char_here(t_data *data, char c);
 int		 end_check(char *str);
 
+		/* display.c */
+
+int		 display(t_data *data);
+
 		/* get_line.c */
 
 char		 *my_strdup(char *src);
@@ -94,7 +118,6 @@ char		 *my_strdup(char *src);
 		/* main.c */
 
 int		 main(void);
-int		 display(t_data *data);
 int		 create_occ_nb(t_data *data);
 
 #endif /* DATA_H_ */
