@@ -1,11 +1,11 @@
 /*
-** crypto.c for  in /home/baptiste/project/crypt_appearance
+** crypto.c for in /home/baptiste/project/crypt_appearance
 **
 ** Made by
 ** Login   <baptiste@epitech.net>
 **
 ** Started on  Tue Jun  7 18:54:07 2016
-** Last update Tue Jun  7 19:04:13 2016 
+** Last update Wed Jun  8 10:29:33 2016 
 */
 
 #include "data.h"
@@ -15,8 +15,7 @@ int	resolv(t_data *data)
   if ((data->str_tmp = my_strdup(data->str_ori)) == NULL)
     return (-1);
   data->occ_str = my_strdup("");
-  printf("[diff] = %d\n", count_char_diff(data));
-  printf("[occ] = %s\n", data->occ_str);
+  count_char_diff(data);
   return (1);
 }
 
@@ -56,7 +55,6 @@ int	count_char_here(t_data *data, char c)
     {
       buff[0] = c;
       buff[1] = '\0';
-      printf("[%s] et [%s]\n", data->occ_str, buff);
       data->occ_str = my_strmcat(data->occ_str, buff);
       return (1);
     }

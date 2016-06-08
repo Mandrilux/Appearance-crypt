@@ -5,7 +5,7 @@
 ** Login   <baptiste@epitech.net>
 **
 ** Started on  Mon May 16 11:29:12 2016
-** Last update Tue Jun  7 18:52:22 2016 
+** Last update Wed Jun  8 10:31:10 2016 
 */
 
 #include "data.h"
@@ -18,8 +18,7 @@ char    *my_strdup(char *src)
   if (src == NULL)
     return (NULL);
   lenght = strlen(src) + 1;
-  str = malloc(sizeof(char) * lenght);
-  if (str == NULL)
+  if ((str = malloc(sizeof(char) * lenght)) == NULL)
     return (NULL);
   strcpy(str, src);
   return (str);
@@ -32,8 +31,7 @@ char		*m_realoc(char *s, int fillback, char *buff, int *start)
 
   old_len = 0;
   s != 0 ? (old_len = strlen(s)) : (old_len = 0);
-  line = malloc((old_len + fillback + 1) * sizeof(char));
-  if (line == NULL)
+  if ((line = malloc((old_len + fillback + 1) * sizeof(char))) == NULL)
     return (NULL);
   memset(line, '\0', old_len + fillback + 1);
   s != 0 ? strncpy(line, s, old_len) : strncpy(line, "", old_len);

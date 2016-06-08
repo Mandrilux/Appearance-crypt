@@ -1,5 +1,5 @@
 /*
-1;2802;0c** main.c for in /home/baptiste/project/generator_h
+** main.c for in /home/baptiste/project/generator_h
 **
 ** Made by
 ** Login   <baptiste@epitech.net>

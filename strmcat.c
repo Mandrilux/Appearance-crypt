@@ -5,7 +5,7 @@
 ** Login   <picot@epitech.net>
 **
 ** Started on  Sun Nov 29 16:35:49 2015 picot_a
-** Last update Tue Jun  7 19:05:31 2016 
+** Last update Wed Jun  8 10:30:09 2016 
 */
 
 #include "data.h"
@@ -16,8 +16,7 @@ char	*my_strmcat(char *str_1, char *str_2)
   int	i;
   int	j;
 
-  dest = malloc(sizeof(char) * (strlen(str_1) + strlen(str_2) + 1));
-  if (dest == NULL)
+  if ((dest = malloc(sizeof(char) * (strlen(str_1) + strlen(str_2) + 1))) == NULL)
     return (NULL);
   memset(dest, 0, (int)strlen(str_1) + (int)strlen(str_2) + 1);
   i = 0;

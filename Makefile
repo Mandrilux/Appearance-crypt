@@ -5,7 +5,7 @@
 ## Login   <baptiste@epitech.net>
 ## 
 ## Started on  Wed May 11 17:39:05 2016 
-## Last update Tue Jun  7 18:55:28 2016 
+## Last update Wed Jun  8 21:30:00 2016 
 ##
 
 
@@ -22,7 +22,8 @@ OBJ	=	$(SRC:.c=.o)
 
 CC	=	/usr/bin/gcc
 
-CFLAGS	=	-W -Wall -Wextra -ansi -pedantic -g
+CFLAGS	=	-W -Wall -Wextra -ansi -pedantic -O3
+
 CFLAGS  +=      -I$(INC_DIR)
 
 RM	=	rm -f
