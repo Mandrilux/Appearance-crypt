@@ -1,65 +1,82 @@
 /*
-** instruction.c for inscrut in /home/heraud_b/rendu/CPE_2015_pushswap
+** instruction.c for  in /home/baptiste/project/crypt_appearance
 **
-** Made by baptiste heraud
-** Login   <heraud_b@epitech.net>
+** Made by
+** Login   <baptiste@epitech.net>
 **
-** Started on  Mon Nov  2 16:01:44 2015 baptiste heraud
-** Last update Wed Jun  8 22:27:16 2016 
+** Started on  Wed Jun  8 22:53:14 2016
+** Last update Wed Jun  8 22:58:21 2016 
 */
+
 
 #include "data.h"
 
-void swap(int *array)
+void swap(t_list **liste)
 {
-  swap_elem(array, 0, 1);
+  /* t_list *tmp; */
+  t_list *tmp2;
+  t_list *save;
+
+  save = (*liste)->nxt->nxt;
+  /* tmp = *liste; */
+  tmp2 = *liste;
+  *liste = (*liste)->nxt;
+  (*liste)->nxt = tmp2;
+  (*liste)->nxt->nxt = save;
 }
 
-void rotate_left(int *array, int size)
+void	rotate_left(t_list **liste)
 {
-  int i;
+  t_list	*tmp;
 
-  i = 0;
-  swap_elem(array, 0, size);
-  while (i < size)
-    {
-      if (i + 1 == size)
-	  swap_elem(array, i , i + 1);
-      else
-	swap_elem(array, i , i + 1);
-      i++;
-    }
-  /* my_putstr("ra "); */
+  tmp = *liste;
+  while (tmp->nxt != NULL)
+    tmp = tmp->nxt;
+  tmp->nxt = *liste;
+  *liste = (*liste)->nxt;
+  tmp->nxt->nxt =NULL;
 }
 
-void rotate_right(int *array, int size)
-{
-  int i;
-
-  i = size;
-  while (i > 1)
-    {
-      if (i - 1 == 0)
-        {
-          swap_elem(array, i , size - 1);
-          swap_elem(array, i , i - 1);
-        }
-      else
-        swap_elem(array, i , i - 1);
-      i--;
-    }
-}
-
-/* void display_tab(int *array, int size) */
+/* void    rotate_left_end(t_list **liste, int stop) */
 /* { */
-/*   int i; */
+/*   t_list        *tmp; */
 
-/*   i = 0; */
-/*   while (i < size) */
-/*     { */
-/*       /\* my_put_nbr(array[i]); *\/ */
-/*       /\* my_putstr(" , "); *\/ */
-/*       i++; */
-/*     } */
-/*   /\* my_putchar('\n'); *\/ */
+/*   tmp = *liste; */
+/*   while (tmp->nxt != NULL) */
+/*     tmp = tmp->nxt; */
+/*   /\* if (stop == 1) *\/ */
+/*   /\*   my_putstr("ra "); *\/ */
+/*   /\* else *\/ */
+/*   /\*   my_putstr("ra"); *\/ */
+/*   tmp->nxt = *liste; */
+/*   *liste = (*liste)->nxt; */
+/*   tmp->nxt->nxt =NULL; */
 /* } */
+
+/* void show_list_c(t_list *liste) */
+/* { */
+/*   t_list *tmp; */
+
+/*   tmp = liste; */
+/*   while (tmp != NULL) */
+/*     { */
+/*       /\* my_put_nbr(tmp->val); *\/ */
+/*       /\* my_putchar(' '); *\/ */
+/*       tmp = tmp->nxt; */
+/*     } */
+/* } */
+
+void free_list(t_list **liste)
+{
+  t_list *tmp;
+  t_list *tampon;
+
+  tmp = *liste;
+  while (tmp->nxt != NULL)
+    {
+      tampon = tmp;
+      tmp = tmp->nxt;
+      free(tampon);
+    }
+  free(tmp);
+}

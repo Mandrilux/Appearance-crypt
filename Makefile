@@ -5,7 +5,7 @@
 ## Login   <baptiste@epitech.net>
 ## 
 ## Started on  Wed May 11 17:39:05 2016 
-## Last update Wed Jun  8 22:30:09 2016 
+## Last update Wed Jun  8 22:52:53 2016 
 ##
 
 
@@ -17,8 +17,7 @@ SRC	=	main.c \
 		strmcat.c \
 		count.c \
 		display.c \
-		sort_number.c \
-		swap_elem.c \
+		sort.c \
 		instruction.c
 
 INC_DIR	=	include

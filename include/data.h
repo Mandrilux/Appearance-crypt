@@ -16,17 +16,29 @@ typedef struct          s_data
   int			*occ_num;
 }                       t_data;
 
+typedef struct s_list
+{
+  int val;
+  struct s_list *nxt;
+}t_list;
+
 char		 *my_strdup(char *src);
+
+		/* sort.c */
+
+int		 check_order(t_list **l_a, int size);
+int		 add_first(t_list **liste, int valeur);
+int		 sort(t_list **l_a, int size);
+
+		/* instruction.c */
+
+void             swap(t_list **liste);
+void		 rotate_left(t_list **liste);
+void		 free_list(t_list **liste);
 
 		/* count.c */
 
 int		 count_char(char *str, char c);
-
-		/* instruction.c */
-
-void		 swap(int *array);
-void		 rotate_left(int *array, int size);
-void		 rotate_right(int *array, int size);
 
 		/* strmcat.c */
 
@@ -38,15 +50,6 @@ int		 resolv(t_data *data);
 int		 count_char_diff(t_data *data);
 int		 count_char_here(t_data *data, char c);
 int		 end_check(char *str);
-
-		/* sort_number.c */
-
-void		 sort_numbers(int *array, int size);
-int		 sort_board(int *l_a, char *str, int size);
-
-		/* swap_elem.c */
-
-void		 swap_elem(int *array, int index1, int index2);
 
 		/* display.c */
 
