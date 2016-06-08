@@ -1,11 +1,11 @@
 /*
-1;2802;0c** main.c for in /home/baptiste/project/generator_h
+** main.c for in /home/baptiste/project/generator_h
 **
 ** Made by
 ** Login   <baptiste@epitech.net>
 **
 ** Started on  Mon May 16 10:48:51 2016
-** Last update Wed Jun  8 21:52:21 2016 
+** Last update Wed Jun  8 22:31:55 2016 
 */
 
 #include "data.h"
@@ -43,6 +43,7 @@ int		main(void)
       data.occ_num = tmp;
       data.occ_str = my_strmcat(data.occ_str, my_strdup(" "));
     }
+  sort_board(data.occ_num, data.occ_str, strlen(data.occ_str));
   display(&data);
   return (EXIT_SUCCESS);
 }

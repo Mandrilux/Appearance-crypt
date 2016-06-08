@@ -16,85 +16,17 @@ typedef struct          s_data
   int			*occ_num;
 }                       t_data;
 
-
-
-char		 *my_strdup(char *src);
-
-
-
-
-char		 *my_strdup(char *src);
-
-
-
-
-char		 *my_strdup(char *src);
-
-
-
-
-char		 *my_strdup(char *src);
-
-
-
-
-char		 *my_strdup(char *src);
-
-
-
-
-
-
-char		 *my_strdup(char *src);
-
-
-
-
-
-
-char		 *my_strdup(char *src);
-
-
-
-
-
-
-
-
-char		 *my_strdup(char *src);
-
-
-
-
-
-
-
-
-char		 *my_strdup(char *src);
-
-
-
-
-
-
-
-
-char		 *my_strdup(char *src);
-
-
-
-
-
-
-
-
-
-
 char		 *my_strdup(char *src);
 
 		/* count.c */
 
 int		 count_char(char *str, char c);
+
+		/* instruction.c */
+
+void		 swap(int *array);
+void		 rotate_left(int *array, int size);
+void		 rotate_right(int *array, int size);
 
 		/* strmcat.c */
 
@@ -106,6 +38,15 @@ int		 resolv(t_data *data);
 int		 count_char_diff(t_data *data);
 int		 count_char_here(t_data *data, char c);
 int		 end_check(char *str);
+
+		/* sort_number.c */
+
+void		 sort_numbers(int *array, int size);
+int		 sort_board(int *l_a, char *str, int size);
+
+		/* swap_elem.c */
+
+void		 swap_elem(int *array, int index1, int index2);
 
 		/* display.c */
 
