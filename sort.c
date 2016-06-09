@@ -5,7 +5,7 @@
 ** Login   <heraud@epitech.net>
 **
 ** Started on  Wed Nov 18 18:28:32 2015 heraud_b
-** Last update Wed Jun  8 22:57:36 2016 
+** Last update Thu Jun  9 07:58:25 2016 
 */
 
 #include "data.h"
@@ -28,7 +28,7 @@ int	check_order(t_list **l_a, int size)
   return (0);
 }
 
-int	add_first(t_list **liste, int valeur)
+int	add_first(t_list **liste, int valeur, char c)
 {
   t_list *new_maillon;
 
@@ -36,6 +36,7 @@ int	add_first(t_list **liste, int valeur)
   if (new_maillon == NULL)
     return (1);
   new_maillon->val = valeur;
+  new_maillon->letter = c;
   new_maillon->nxt = *liste;
   *liste = new_maillon;
   return (0);
@@ -68,28 +69,3 @@ int	sort(t_list **l_a, int size)
     }
   return (1);
 }
-
-/* int	main(int argc, char **argv) */
-/* { */
-/*   t_list *l_a; */
-/*   int i; */
-
-/*   if (argc < 2) */
-/*     { */
-/*       my_putchar('\n'); */
-/*       return (0); */
-/*     } */
-/*   i = argc - 1; */
-/*   l_a = NULL; */
-/*   while (i > 0) */
-/*     { */
-/*       add_first(&l_a, my_getnbr(argv[i])); */
-/*       i--; */
-/*     } */
-/*   if (check_order(&l_a, argc - 1) == 1) */
-/*     sort(&l_a, argc -1); */
-/*   /\* add_first(&l_a, my_getnbr(argv[i])); *\/  my_putchar('\n'); */
-/*   show_list_c(l_a); */
-/*   free_list(&l_a); */
-/*   return (0); */
-/* } */

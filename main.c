@@ -5,7 +5,7 @@
 ** Login   <baptiste@epitech.net>
 **
 ** Started on  Mon May 16 10:48:51 2016
-** Last update Wed Jun  8 22:50:05 2016 
+** Last update Thu Jun  9 07:58:41 2016 
 */
 
 #include "data.h"
@@ -16,6 +16,7 @@ int		main(void)
   int		nb_space;
   int		*tmp;
   int		i = -1;
+  t_list *l_a = NULL;
 
   printf("Entrez une chaine\n");
   if ((data.str_ori  = get_next_line(0)) == NULL)
@@ -35,7 +36,7 @@ int		main(void)
 	{
 	  printf("[-] Error memory\n");
 	  return (EXIT_FAILURE);
-	}
+ 	}
       while (++i < (int)strlen(data.occ_str))
 	tmp[i] = data.occ_num[i];
       tmp[i] = nb_space;
@@ -43,8 +44,12 @@ int		main(void)
       data.occ_num = tmp;
       data.occ_str = my_strmcat(data.occ_str, my_strdup(" "));
     }
-  /* sort_board(data.occ_num, data.occ_str, strlen(data.occ_str)); */
-  display(&data);
+  i = -1;
+  while (data.occ_str[++i] != '\0')
+    add_first(&l_a, data.occ_num[i], data.occ_str[i]);
+  sort(&l_a, strlen(data.occ_str));
+  show_list_c(l_a);
+  free_list(&l_a);
   return (EXIT_SUCCESS);
 }
 

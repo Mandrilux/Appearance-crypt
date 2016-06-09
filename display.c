@@ -5,16 +5,21 @@
 ** Login   <baptiste@epitech.net>
 **
 ** Started on  Wed Jun  8 21:51:54 2016
-** Last update Wed Jun  8 21:52:09 2016 
+** Last update Thu Jun  9 07:57:12 2016 
 */
 
 #include "data.h"
 
-int     display(t_data *data)
+void show_list_c(t_list *liste)
 {
-  int   i = -1;
+  t_list *tmp;
 
-  while (data->occ_str[++i] != '\0')
-    printf("char = [%c] et nb = %d\n", data->occ_str[i], data->occ_num[i]);
-  return (1);
+  tmp = liste;
+  while (tmp != NULL)
+    {
+      printf("[%c] : %d\n", tmp->letter, tmp->val);
+      /* my_put_nbr(tmp->val); */
+      /* my_putchar(' '); */
+      tmp = tmp->nxt;
+    }
 }

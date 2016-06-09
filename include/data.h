@@ -16,18 +16,20 @@ typedef struct          s_data
   int			*occ_num;
 }                       t_data;
 
-typedef struct s_list
+typedef struct		s_list
 {
-  int val;
-  struct s_list *nxt;
-}t_list;
+  int			val;
+  char			letter;
+
+  struct s_list	*nxt;
+}			t_list;
 
 char		 *my_strdup(char *src);
 
 		/* sort.c */
 
 int		 check_order(t_list **l_a, int size);
-int		 add_first(t_list **liste, int valeur);
+int		 add_first(t_list **liste, int valeur, char c);
 int		 sort(t_list **l_a, int size);
 
 		/* instruction.c */
@@ -53,7 +55,7 @@ int		 end_check(char *str);
 
 		/* display.c */
 
-int		 display(t_data *data);
+void		show_list_c(t_list *liste);
 
 		/* get_line.c */
 
