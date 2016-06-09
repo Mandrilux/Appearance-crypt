@@ -63,11 +63,13 @@ char		 *my_strdup(char *src);
 
 		/* main.c */
 
-int		 main(void);
 int		 create_occ_nb(t_data *data);
 
 		/* resolv.c */
 
 int	 	 ceasar(t_list *liste, char *str);
 
+		/* init.c */
+
+t_data          *init_data();
 #endif /* DATA_H_ */
