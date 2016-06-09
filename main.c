@@ -5,7 +5,7 @@
 ** Login   <baptiste@epitech.net>
 **
 ** Started on  Mon May 16 10:48:51 2016
-** Last update Thu Jun  9 07:58:41 2016 
+** Last update Thu Jun  9 10:33:21 2016 
 */
 
 #include "data.h"
@@ -49,6 +49,8 @@ int		main(void)
     add_first(&l_a, data.occ_num[i], data.occ_str[i]);
   sort(&l_a, strlen(data.occ_str));
   show_list_c(l_a);
+  if ((ceasar(l_a, data.str_ori)) == -1)
+    printf("[-] Error when resolving by ceasar\n");
   free_list(&l_a);
   return (EXIT_SUCCESS);
 }

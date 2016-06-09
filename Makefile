@@ -5,7 +5,7 @@
 ## Login   <baptiste@epitech.net>
 ## 
 ## Started on  Wed May 11 17:39:05 2016 
-## Last update Thu Jun  9 08:00:14 2016 
+## Last update Thu Jun  9 10:35:26 2016 
 ##
 
 
@@ -18,7 +18,8 @@ SRC	=	main.c \
 		count.c \
 		display.c \
 		sort.c \
-		instruction.c
+		instruction.c \
+		algo.c
 
 INC_DIR	=	include
 
@@ -26,7 +27,7 @@ OBJ	=	$(SRC:.c=.o)
 
 CC	=	/usr/bin/gcc
 
-CFLAGS	=	-W -Wall -Wextra -ansi -pedantic -O3
+CFLAGS	=	-W -Wall -Wextra -ansi -pedantic -O3 -g
 
 CFLAGS  +=      -I$(INC_DIR)
 

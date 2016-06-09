@@ -66,4 +66,8 @@ char		 *my_strdup(char *src);
 int		 main(void);
 int		 create_occ_nb(t_data *data);
 
+		/* resolv.c */
+
+int	 	 ceasar(t_list *liste, char *str);
+
 #endif /* DATA_H_ */
