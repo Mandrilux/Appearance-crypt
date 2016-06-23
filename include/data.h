@@ -56,6 +56,7 @@ int		 end_check(char *str);
 		/* display.c */
 
 void		show_list_c(t_list *liste);
+int		display_error(char *str);
 
 		/* get_line.c */
 

@@ -1,15 +1,5 @@
-##
-## Makefile for  in /home/baptiste/rendu/CPE_colle_semaine3
-## 
-## Made by 
-## Login   <baptiste@epitech.net>
-## 
-## Started on  Wed May 11 17:39:05 2016 
-## Last update Thu Jun  9 10:39:20 2016 
-##
 
-
-NAME	=	occ
+NAME	=	appearance
 
 SRC	=	main.c \
 		init.c \

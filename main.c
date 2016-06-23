@@ -5,7 +5,7 @@
 ** Login   <baptiste@epitech.net>
 **
 ** Started on  Mon May 16 10:48:51 2016
-** Last update Thu Jun  9 10:46:27 2016 
+** Last update Thu Jun 23 22:50:45 2016 
 */
 
 #include "data.h"
@@ -17,22 +17,18 @@ int		main(int ac, char **av)
   int		*tmp;
   int		i = -1;
   t_list *l_a = NULL;
+  (void) ac;
+  (void) av;
 
   if ((data = init_data()) == NULL)
     return (EXIT_FAILURE);
   resolv(data);
   if (create_occ_nb(data) == -1)
-    {
-      printf("[-] Error when count char\n");
-      return (EXIT_FAILURE);
-    }
+    return (display_error("[-] Error when count char\n"));
   if ((nb_space = count_char(data->str_ori, ' ')) > 0)
     {
       if ((tmp = malloc(sizeof(int) * (strlen(data->occ_str) + 1))) == NULL)
-	{
-	  printf("[-] Error memory\n");
-	  return (EXIT_FAILURE);
- 	}
+	  return (display_error("[-] Error memory\n"));
       while (++i < (int)strlen(data->occ_str))
 	tmp[i] = data->occ_num[i];
       tmp[i] = nb_space;
@@ -45,11 +41,11 @@ int		main(int ac, char **av)
     add_first(&l_a, data->occ_num[i], data->occ_str[i]);
   sort(&l_a, strlen(data->occ_str));
   show_list_c(l_a);
-  if (ac != 1)
-    {
-      if ((ceasar(l_a, data->str_ori)) == -1)
-	printf("[-] Error when resolving by ceasar\n");
-    }
+  /* if (ac != 1) */
+  /*   { */
+  /*     if ((ceasar(l_a, data->str_ori)) == -1) */
+  /* 	printf("[-] Error when resolving by ceasar\n"); */
+  /*   } */
   free_list(&l_a);
   return (EXIT_SUCCESS);
 }
