@@ -24,7 +24,7 @@ typedef struct		s_list
   struct s_list	*nxt;
 }			t_list;
 
-char		 *my_strdup(char *src);
+char *strdup(const char *s);
 
 		/* sort.c */
 

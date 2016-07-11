@@ -5,24 +5,10 @@
 ** Login   <baptiste@epitech.net>
 **
 ** Started on  Mon May 16 11:29:12 2016
-** Last update Wed Jun  8 10:31:10 2016 
+** Last update Mon Jul 11 09:34:06 2016 
 */
 
 #include "data.h"
-
-char    *my_strdup(char *src)
-{
-  char  *str;
-  int   lenght;
-
-  if (src == NULL)
-    return (NULL);
-  lenght = strlen(src) + 1;
-  if ((str = malloc(sizeof(char) * lenght)) == NULL)
-    return (NULL);
-  strcpy(str, src);
-  return (str);
-}
 
 char		*m_realoc(char *s, int fillback, char *buff, int *start)
 {

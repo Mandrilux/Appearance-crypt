@@ -5,16 +5,16 @@
 ** Login   <baptiste@epitech.net>
 **
 ** Started on  Tue Jun  7 18:54:07 2016
-** Last update Wed Jun  8 10:29:33 2016 
+** Last update Mon Jul 11 09:35:05 2016 
 */
 
 #include "data.h"
 
 int	resolv(t_data *data)
 {
-  if ((data->str_tmp = my_strdup(data->str_ori)) == NULL)
+  if ((data->str_tmp = strdup(data->str_ori)) == NULL)
     return (-1);
-  data->occ_str = my_strdup("");
+  data->occ_str = strdup("");
   count_char_diff(data);
   return (1);
 }

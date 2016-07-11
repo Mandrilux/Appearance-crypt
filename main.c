@@ -5,7 +5,7 @@
 ** Login   <baptiste@epitech.net>
 **
 ** Started on  Mon May 16 10:48:51 2016
-** Last update Mon Jul 11 09:32:52 2016 
+** Last update Mon Jul 11 09:34:28 2016 
 */
 
 #include "data.h"
@@ -34,7 +34,7 @@ int		main(int ac, char **av)
       tmp[i] = nb_space;
       free(data->occ_num);
       data->occ_num = tmp;
-      data->occ_str = my_strmcat(data->occ_str, my_strdup(" "));
+      data->occ_str = my_strmcat(data->occ_str, strdup(" "));
     }
   i = -1;
   while (data->occ_str[++i] != '\0')
