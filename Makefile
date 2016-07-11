@@ -10,7 +10,6 @@ SRC	=	main.c \
 		display.c \
 		sort.c \
 		instruction.c \
-		algo.c
 
 INC_DIR	=	include
 
@@ -18,7 +17,7 @@ OBJ	=	$(SRC:.c=.o)
 
 CC	=	/usr/bin/gcc
 
-CFLAGS	=	-W -Wall -Wextra -ansi -pedantic -O3 -g
+CFLAGS	=	-W -Wall -Wextra -ansi -pedantic
 
 CFLAGS  +=      -I$(INC_DIR)
 
@@ -29,7 +28,7 @@ all	:	$(NAME)
 
 $(NAME)	:	$(OBJ)
 		@$(CC) $(CFLAGS) -o $(NAME) $(OBJ) $(LDFLAGS)
-		@$(ECHO) '\033[0;32m> gen Compiled\033[0m'
+		@$(ECHO) '\033[0;32m> appearance Compiled\033[0m'
 
 clean	:
 		-@$(RM) $(OBJ)
